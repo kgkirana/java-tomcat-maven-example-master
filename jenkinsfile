@@ -3,16 +3,13 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
-                sh ***
-                echo "PATH = $[PATH}"
-                echo "MAVEN_HOME = ${MAVEN_HOME}"
-                ***
+                echo "Initializing the Code file.."
             }
         }
 
         stage ('Build') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World..!!'
             }
         }
     }
