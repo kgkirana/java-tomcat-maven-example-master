@@ -12,5 +12,11 @@ pipeline {
                 echo 'Hello World..!!'
             }
         }
+
+        stage ('Deploy') {
+            step {
+                echo 'Deployed an Artifact..'
+            }
+        }
     }
 }
