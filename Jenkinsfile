@@ -11,11 +11,13 @@ pipeline {
             }
         }
 
-        post{
-            success{
-                echo 'Now Archiving ...'
+        stage ('Archive war file') {
+            post{
+                success{
+                    echo 'Now Archiving ...'
 
-                archiveArtifacts artifacts : '**/*.war'
+                    archiveArtifacts artifacts : '**/*.war'
+                }
             }
         }
     }
