@@ -14,9 +14,8 @@ pipeline {
         }
 
         stage ('Deploy') {
-            step {
+            steps {
                 echo 'Deployed an Artifact..'
-                }
             }
         }
     }
