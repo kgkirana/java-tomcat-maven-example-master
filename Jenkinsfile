@@ -24,5 +24,25 @@ pipeline {
                 build job : '06_Deploy-Artifact-Staging-Pipeline'
             }
         }
+
+        stage ('Deploy to Production'){
+            steps{
+                timeout (time: 5, unit:'DAYS'){
+                    input message: 'Approve PRODUCTION Deployment?'
+                }
+
+                build job : '07_Deploy-Artifact-PROD-Pipeline'
+            }
+
+            post{
+                success{
+                    echo 'Deployment on PRODUCTION is Successful'
+                }
+
+                failure{
+                    echo 'Deployment Failure on PRODUCTION'
+                }
+            }
+        }
     }
 }
