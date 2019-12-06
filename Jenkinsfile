@@ -18,5 +18,11 @@ pipeline {
                 }
             }
         }
+
+        stage ('Deploy Build in Staging Area') {
+            steps {
+                build job : '06_Deploy-Artifact-Staging-Pipeline'
+            }
+        }
     }
 }
